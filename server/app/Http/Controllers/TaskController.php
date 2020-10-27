@@ -16,7 +16,7 @@ class TaskController extends Controller
     public function index()
     {
         $tasks = Task::all();
-        return view('tasks.index', ['tasks' => $tasks]);
+        return view('tasks.index', compact('tasks'));
     }
 
     /**
@@ -62,7 +62,7 @@ class TaskController extends Controller
     {
         // taskモデルから1件を取得
         $task = Task::find($id);
-        return view('tasks.show', ['task'=>$task]);
+        return view('tasks.show', compact('task'));
     }
 
     /**
@@ -74,7 +74,7 @@ class TaskController extends Controller
     public function edit(TaskRequest $request, $id)
     {
         $task = Task::find($id);
-        return view('tasks.edit', ['task'=>$task]);
+        return view('tasks.edit', compact('task'));
     }
 
     /**
