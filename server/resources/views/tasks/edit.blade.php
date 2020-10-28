@@ -25,7 +25,8 @@
     </p>
     <p>
         内容<br>
-        <textarea name="body">"{{ $task->body }}"</textarea>
+        <textarea name="body">{{ $task->body }}</textarea>
     </p>
     <input type="submit" value="更新">
 </form>
+<a href="/tasks/{{ $task->id }}"><button>詳細に戻る</button></a>
