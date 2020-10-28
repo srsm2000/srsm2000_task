@@ -1,7 +1,7 @@
 <h1>タスク一覧</h1>
 @foreach ($tasks as $task)
     <a href="/tasks/{{ $task->id }}">{{ $task->title }}</a>
-    <form action="/tasks/{{ $task->id }}" method="post"  style="display: inline;">
+    <form action="/tasks/{{ $task->id }}" method="post" style="display: inline;">
         @csrf
         @method('DELETE')
         <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false};">
